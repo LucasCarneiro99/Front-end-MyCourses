@@ -1,0 +1,55 @@
+<section class="main-content">
+  <div class="spacer"></div>
+
+  <div
+    class="container d-flex align-items-start flex-column degrade p-2 mt-5"
+    style="border-radius: 10px"
+  >
+    <div class="col-12 d-flex flex-column p-2">
+      <div class="p-2 d-flex align-items-center">
+        <h2 class="mr-auto">Minhas submissões</h2>
+        <button
+          (click)="abrirModal()"
+          style="margin-left: auto"
+          class="btn btn-primary ml-auto"
+        >
+          Adicionar curso
+        </button>
+      </div>
+    </div>
+    <div class="d-flex align-items-center p-2" style="width: 100%">
+      <table
+        class="table table-bordered table-striped table-hover table-border-radius"
+      >
+        <thead>
+          <tr>
+            <th scope="col">Nome do curso</th>
+            <th scope="col">Situação</th>
+            <th scope="col">Descrição</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let curso of arrayGeralCursos">
+            <td>
+              <a href="{{ curso.videoUrl }}">{{ curso.name }}</a>
+            </td>
+            <td>{{ curso.situacao }}</td>
+            <td>{{ curso.description }}</td>
+            <td>
+              <button
+                class="margemBotao btn btn-danger"
+                (click)="apagarCurso(curso.id)"
+              >
+                Apagar
+              </button>
+              <button class="btn btn-primary" (click)="abrirModal(curso)">
+                Editar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<div class="card card-primary no-margin">
+  <div class="card-header d-flex justify-content-between">
+    <h2>Justificativa de reprovação</h2>
+    <button class="btn-close" (click)="activeModal.dismiss()"></button>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="form" action="">
+      <div class="mt-1 form-group d-flex flex-column">
+        <label for="">Descrição da reprovação</label>
+        <textarea
+          formControlName="descProfessor"
+          placeholder="Digite a descrição da reprovação do curso"
+          class="form-control"
+          name=""
+          id=""
+          cols="30"
+          rows="5"
+        ></textarea>
+      </div>
+    </form>
+    <div class="d-flex justify-content-end mt-2">
+      <button (click)="sendForm()" class="btn btn-primary">Enviar</button>
+    </div>
+  </div>
+</div>

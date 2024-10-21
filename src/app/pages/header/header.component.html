@@ -1,0 +1,48 @@
+<div class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+  <div class="margemLogo">
+    <a class="maozinhaClick navbar-brand" (click)="redirecionarHome()">
+      <img class="tamanhoLogo" src="assets/logoEmPng.png" alt="" />
+    </a>
+  </div>
+  <div *ngIf="alunoOuProfessor ==0" class="bg-danger">
+    asdasdasd
+  </div>
+  <button
+    *ngIf="isLoggedIn"
+    class="navbar-toggler"
+    type="button"
+    (click)="toggleNavbar()"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div
+    *ngIf="isLoggedIn"
+    class="collapse navbar-collapse"
+    [class.show]="!isCollapsed"
+  >
+    <ul class="navbar-nav" [style.paddingLeft.px]="isCollapsed ? 0 : 15">
+      <li class="maozinhaClick nav-item active">
+        <a (click)="redirecionarHome()" class="nav-link">Página principal</a>
+      </li>
+      <!--<li class="maozinhaClick nav-item">
+        <a class="nav-link">Cursos</a>
+      </li>-->
+      <li
+        class="maozinhaClick nav-item active"
+        *ngIf="alunoOuProfessor == 0; else professor"
+      >
+        <a class="nav-link" (click)="minhasSubm()">Minhas submissões WEB</a>
+      </li>
+      <ng-template #professor>
+        <li class="nav-item maozinhaClick">
+          <a class="nav-link" (click)="submissoesProfessor()">Submissões</a>
+        </li>
+      </ng-template>
+      <li></li>
+      <li *ngIf="isLoggedIn" class="maozinhaClick nav-item ml-auto">
+        <a (click)="sairAplicacao()" class="nav-link">Sair</a>
+      </li>
+    </ul>
+  </div>
+</div>

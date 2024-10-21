@@ -1,0 +1,168 @@
+<section class="main-content">
+  <div class="spacer"></div>
+  <div
+    class="container d-flex align-items-start flex-column degrade p-2 mt-5"
+    style="border-radius: 10px"
+  >
+    <div class="d-flex flex-column p-2">
+      <div class="p-2">
+        <h2>Amplie suas oportunidades de carreira com Python</h2>
+      </div>
+      <div class="p-2">
+        <p>
+          A demanda por programadores Python tem crescido significativamente,
+          impulsionada pela versatilidade da linguagem e sua aplicabilidade em
+          diversas áreas. Empresas buscam ativamente profissionais que dominem
+          Python para desenvolvimento web, científico, automação e inteligência
+          artificial. A popularidade da linguagem, aliada à sua sintaxe
+          amigável, torna os desenvolvedores Python altamente procurados no
+          mercado, oferecendo oportunidades abundantes e perspectivas favoráveis
+          para quem possui habilidades nessa linguagem!
+        </p>
+      </div>
+    </div>
+    <div class="d-flex justify-content-start p-2">
+      <div class="d-flex justify-content-between">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex overflow-auto">
+                <div
+                  class="col-3"
+                  style="margin-right: 15px"
+                  *ngFor="let itemPython of listaCursosPython"
+                >
+                  <a
+                    class="maozinhaClick"
+                    (click)="redirecionarParaReproducao(itemPython)"
+                  >
+                    <img
+                      class="img-fluid"
+                      [src]="extrairInfo(itemPython.videoUrl).urlDaImagem"
+                    />
+                  </a>
+                  <label class="d-flex justify-content-center">{{
+                    itemPython.name
+                  }}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="container d-flex align-items-start flex-column degrade p-2 mt-3"
+    style="border-radius: 10px"
+  >
+    <div class="d-flex flex-column p-2">
+      <div class="p-2">
+        <h2>Evolua no mercado com Java</h2>
+      </div>
+      <div class="p-2">
+        <p>
+          Java é uma linguagem de programação de alto nível e orientada a
+          objetos, desenvolvida pela Sun Microsystems e lançada em 1995.
+          Conhecida por sua portabilidade, a linguagem permite que os programas
+          escritos em Java sejam executados em diversas plataformas sem a
+          necessidade de recompilação. A sintaxe estruturada e a forte tipagem
+          tornam o código robusto e seguro. Java é amplamente utilizado no
+          desenvolvimento de aplicativos corporativos, sistemas embarcados,
+          dispositivos móveis e na construção de aplicativos para a web. A
+          comunidade Java é extensa, e a linguagem continua sendo uma escolha
+          crucial para muitos desenvolvedores, com forte demanda no mercado de
+          trabalho!
+        </p>
+      </div>
+    </div>
+    <div class="d-flex justify-content-start p-2">
+      <div class="d-flex justify-content-between">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex overflow-auto">
+                <div
+                  class="col-3"
+                  style="margin-right: 15px"
+                  *ngFor="let itemJava of listaCursosJava"
+                >
+                  <a
+                    class="maozinhaClick"
+                    (click)="redirecionarParaReproducao(itemJava)"
+                  >
+                    <img
+                      class="img-fluid"
+                      [src]="extrairInfo(itemJava.videoUrl).urlDaImagem"
+                    />
+                  </a>
+                  <label class="d-flex justify-content-center">{{
+                    itemJava.name
+                  }}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="container d-flex align-items-start flex-column degrade p-2 mt-3"
+    style="border-radius: 10px"
+  >
+    <div class="d-flex flex-column p-2">
+      <div class="p-2">
+        <h2>Aprenda Excel</h2>
+      </div>
+      <div class="p-2">
+        <p>
+          O Microsoft Excel é uma poderosa ferramenta de planilha amplamente
+          utilizada para análise de dados, modelagem financeira, e criação de
+          gráficos. Lançado pela Microsoft, o Excel oferece uma interface
+          intuitiva e funcionalidades avançadas, como fórmulas, funções e
+          recursos de automação. Sua capacidade de manipular grandes conjuntos
+          de dados e realizar cálculos complexos fazem dele uma ferramenta
+          indispensável para profissionais em finanças, contabilidade e áreas
+          relacionadas. O Excel também suporta a criação de macros, permitindo a
+          automação de tarefas repetitivas. Sua presença ubíqua em ambientes
+          empresariais torna a proficiência no Excel uma habilidade valiosa e
+          frequentemente requisitada no mercado de trabalho.
+        </p>
+      </div>
+    </div>
+    <div class="d-flex justify-content-start p-2">
+      <div class="d-flex justify-content-between">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex overflow-auto">
+                <div
+                  class="col-3"
+                  style="margin-right: 15px"
+                  *ngFor="let itemExcel of listaCursosExcel"
+                >
+                  <a
+                    class="maozinhaClick"
+                    (click)="redirecionarParaReproducao(itemExcel)"
+                  >
+                    <img
+                      class="img-fluid"
+                      [src]="extrairInfo(itemExcel.videoUrl).urlDaImagem"
+                    />
+                  </a>
+                  <label class="d-flex justify-content-center">{{
+                    itemExcel.name
+                  }}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</section>

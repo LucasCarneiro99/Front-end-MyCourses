@@ -1,0 +1,51 @@
+  <section class="imagemFundo main-content">
+    <div
+      class="aumentarDiv container d-flex align-items-center justify-content-center"
+    >
+      <div class="row">
+        <div class="">
+          <div class="card">
+            <form [formGroup]="form">
+              <div class="card-header">
+                <h5>Login</h5>
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="text">Usuário</label>
+                  <input
+                    formControlName="login"
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="Seu usuário de aluno UCSAL"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="senha">Senha</label>
+                  <input
+                    formControlName="password"
+                    type="password"
+                    class="form-control"
+                    id="senha"
+                    name="senha"
+                    placeholder="Sua senha"
+                  />
+                </div>
+                <div>
+                  <label class="text-danger">{{ mensagemLogin }}</label>
+                </div>
+                <button
+                  (click)="login()"
+                  type="submit"
+                  class="mt-4 btn btn-primary"
+                >
+                  Entrar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

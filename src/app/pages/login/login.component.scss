@@ -1,0 +1,20 @@
+//body {
+///background-image: url("/assets/imagemPlanoFundo.jpg");
+// background-size: cover;
+// background-repeat: no-repeat;
+//}
+
+.aumentarDiv {
+  height: 100%
+}
+
+.navbar {
+  background-color: gray !important;
+}
+
+.imagemFundo {
+  background-image: url("/assets/imagemPlanoFundo.jpg");
+  background-size: cover; /* Ajuste o tamanho conforme necessário */
+  background-position: center; /* Ajuste a posição conforme necessário */
+  height: 100%;
+}

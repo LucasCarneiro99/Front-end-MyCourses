@@ -1,0 +1,10 @@
+app-root {
+  // width: 100%;
+  height: 100%;
+  display: block;
+}
+
+::ng-deep .router-outlet .app-minhas-submissoes {
+  display: block;
+  height: 100%;
+}

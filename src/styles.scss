@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+/* styles.css */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+html {
+  height: 100%;
+  display: block;
+  background-color: #1c316a;
+}
+body {
+  height: 100%;
+  display: block;
+  font-family: "Roboto", sans-serif;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+}
+
+//app-root {
+//display: block;
+//width: 100%;
+//height: 100%;
+//}
