@@ -27,10 +27,10 @@
             <td>
               <a href="{{ curso.videoUrl }}">{{ curso.name }}</a>
             </td>
-            <td>{{ curso.situacao }}</td>
+            <td>{{ curso.situacao?curso.situacao:"Aguardando análise"  }}</td>
             <td>{{ curso.description }}</td>
             <td>
-              <div class="d-flex align-items-center">
+              <div *ngIf="!curso.situacao" class="d-flex align-items-center">
                 <button
                   (click)="cursoReprovado(curso.id)"
                   class="rounded-circle btn btn-primary btn-circle margemDireita"

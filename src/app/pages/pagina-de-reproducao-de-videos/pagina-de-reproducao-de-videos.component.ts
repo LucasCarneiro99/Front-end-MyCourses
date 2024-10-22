@@ -27,7 +27,7 @@ export class PaginaDeReproducaoDeVideosComponent implements OnInit {
     const videoContainer = document.getElementById('video-container');
     if (videoContainer) {
       var iframeCode =
-        '<iframe width="1280" height="720px" src="https://www.youtube.com/embed/' +
+        '<iframe class = "w-100" style="height: 720px" src="https://www.youtube.com/embed/' +
         videoId +
         '" frameborder="0" allowfullscreen></iframe>';
       videoContainer.innerHTML = iframeCode;

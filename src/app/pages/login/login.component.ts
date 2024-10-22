@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CourseServiceService } from 'src/app/services/course-service.service';
 import { HeaderComponent } from '../header/header.component';
@@ -11,8 +11,8 @@ import { HeaderComponent } from '../header/header.component';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup = this.fb.group({
-    login: null,
-    senha: null,
+    login: ['', Validators.required],
+    senha: ['', Validators.required],
   });
   mensagemLogin: String = '';
 

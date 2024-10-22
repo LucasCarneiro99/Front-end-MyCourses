@@ -31,6 +31,7 @@ export class MinhasSubmissoesComponent implements OnInit {
       this.cursosNaoAprovadosUsuario = cursosNaoDisponiveis;
       this.uniaoCursos();
     });
+    console.log("array geral cursos ", this.arrayGeralCursos)
   }
 
   uniaoCursos() {
@@ -40,11 +41,14 @@ export class MinhasSubmissoesComponent implements OnInit {
           !this.cursosAprovadosUsuario.some((obj: any) => obj.id == item.id)
       )
     );
+    console.log("array geral cursos ", this.arrayGeralCursos)
+
   }
 
   getCursosDisponiveis(): Observable<any> {
     return this.cursoService.getCursosUsuarioEspecifico().pipe(
       map((dados: any) => {
+        console.log("DADOS ", dados)
         this.cursosAprovadosUsuario = dados;
         this.cursosAprovadosUsuario = this.cursosAprovadosUsuario.map(
           (d: any) => {
@@ -71,12 +75,16 @@ export class MinhasSubmissoesComponent implements OnInit {
   getCursosNaoDisponiveis(): Observable<any> {
     return this.cursoService.getCursosNaoDisponiveis().pipe(
       map((dados: any) => {
+        console.log("DADOS getcursosNaoDisponiveis", dados)
+
         this.arrayCursos = dados;
+        console.log("matricula do usuario", this.matriculaUsuario);
         this.cursosNaoAprovadosUsuario = this.arrayCursos.filter(
           (objeto: any) => {
             return objeto.userMatricula.includes(this.matriculaUsuario);
           }
         );
+        console.log("array apos filtro", this.cursosNaoAprovadosUsuario)
         this.cursosNaoAprovadosUsuario = this.cursosNaoAprovadosUsuario.map(
           (d: any) => {
             switch (d.status) {
@@ -87,13 +95,14 @@ export class MinhasSubmissoesComponent implements OnInit {
                 d.situacao = 'Aprovado';
                 break;
               case '2':
+                console.log("ENTROU NO CASO 2")
                 d.situacao = 'Recusado';
                 break;
             }
             return d;
           }
         );
-        console.log('imprimindo array', this.cursoService);
+        console.log('imprimindo array', this.cursosNaoAprovadosUsuario);
         return dados; // Retornar os dados transformados
       })
     );

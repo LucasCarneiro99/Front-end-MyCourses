@@ -14,14 +14,19 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: Boolean = false;
 
   ngOnInit(): void {
+    console.log('IMPRIMINDO ISLOGGEDIN', this.isLoggedIn);
+
+    localStorage.getItem('role')? this.isLoggedIn = true : this.isLoggedIn = false;
+    console.log('IMPRIMINDO ISLOGGEDIN', this.isLoggedIn);
     this.possuiToken = this.cursoService.getItem('token');
-    this.alunoOuProfessor = this.cursoService.getItem('role');
+    this.cursoService.getItem('role') == 'USER' ? this.alunoOuProfessor = 0 : this.alunoOuProfessor = 1;
     this.cursoService.loginEvent.subscribe((loggedIn: any) => {
-      console.log("evento chegando no header", loggedIn)
+      console.log("evento chegando no header", loggedIn) //1
       this.isLoggedIn=true
       this.alunoOuProfessor = loggedIn;
      });
     // this.cursoService.logoutEvent.subscribe;
+    console.log('IMPRIMINDO ISLOGGEDIN', this.isLoggedIn);
   }
 
   constructor(
@@ -45,6 +50,7 @@ export class HeaderComponent implements OnInit {
   sairAplicacao() {
     this.isLoggedIn = false
     this.cursoService.removeItem('token');
+    this.cursoService.removeItem('role');
     this.cursoService.logoutSucessful();
     this.router.navigate(['/login']);
   }

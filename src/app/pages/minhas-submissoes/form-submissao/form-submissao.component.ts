@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CourseServiceService } from 'src/app/services/course-service.service';
 
@@ -17,12 +17,12 @@ export class FormSubmissaoComponent implements OnInit {
     public activeModal: NgbActiveModal
   ) {
     this.form = this.fb.group({
-      name: '',
+      name: ['', Validators.required],
       userMatricula: this.cursoService.getItem('userMatricula'),
-      description: '',
+      description: ['', Validators.required],
       imageUrl: '',
       role: 'USER',
-      videoUrl: '',
+      videoUrl: ['', Validators.required],
     });
   }
 

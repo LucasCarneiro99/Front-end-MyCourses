@@ -41,7 +41,7 @@
       </div>
     </form>
     <div class="d-flex justify-content-end mt-2">
-      <button (click)="sendForm()" class="btn btn-primary">Enviar</button>
+      <button [disabled]="!form.valid" (click)="sendForm()" class="btn btn-primary">Enviar</button>
     </div>
   </div>
 </div>
