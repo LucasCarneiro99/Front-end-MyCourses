@@ -2,7 +2,7 @@
   <div class="spacer"></div>
 
   <div
-    class="container d-flex align-items-start flex-column degrade p-2 mt-5"
+    class="cardaTelasMenores container d-flex align-items-start flex-column degrade p-2 mt-5"
     style="border-radius: 10px"
   >
     <div class="col-12 d-flex flex-column p-2">
@@ -10,9 +10,9 @@
         <h2 class="mr-auto">Submissões</h2>
       </div>
     </div>
-    <div class="d-flex align-items-center p-2" style="width: 100%">
+    <div class="table-responsive d-flex align-items-center p-2" style="width: 100%">
       <table
-        class="custom-table table table-bordered table-striped table-hover table-border-radius"
+        class="custom-table table  table-striped table-hover table-border-radius"
       >
         <thead>
           <tr>
@@ -22,7 +22,7 @@
             <th scope="col"></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="table-group-divider">
           <tr *ngFor="let curso of arrayCursos">
             <td>
               <a href="{{ curso.videoUrl }}">{{ curso.name }}</a>
@@ -30,7 +30,7 @@
             <td>{{ curso.situacao?curso.situacao:"Aguardando análise"  }}</td>
             <td>{{ curso.description }}</td>
             <td>
-              <div *ngIf="!curso.situacao" class="d-flex align-items-center">
+              <div *ngIf="curso.situacao == 'Em aguardo'" class="d-flex align-items-center">
                 <button
                   (click)="cursoReprovado(curso.id)"
                   class="rounded-circle btn btn-primary btn-circle margemDireita"

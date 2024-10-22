@@ -3,7 +3,7 @@ import { NgbModalOptions, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormSubmissaoComponent } from './form-submissao/form-submissao.component';
 import '@angular/compiler';
 import { Observable, forkJoin, map } from 'rxjs';
-import { CourseServiceService } from 'src/app/services/course-service.service';
+import { CourseServiceService } from 'src/app/services/courseService/course-service.service';
 
 @Component({
   selector: 'app-minhas-submissoes',

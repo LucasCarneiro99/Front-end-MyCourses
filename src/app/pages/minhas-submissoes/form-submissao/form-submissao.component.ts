@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { CourseServiceService } from 'src/app/services/course-service.service';
+import { CourseServiceService } from 'src/app/services/courseService/course-service.service';
 
 @Component({
   selector: 'app-form-submissao',

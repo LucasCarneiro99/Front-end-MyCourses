@@ -1,6 +1,6 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CourseServiceService } from 'src/app/services/course-service.service';
+import { CourseServiceService } from 'src/app/services/courseService/course-service.service';
 
 @Component({
   selector: 'app-header',

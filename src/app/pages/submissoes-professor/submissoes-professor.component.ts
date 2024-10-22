@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
-import { CourseServiceService } from 'src/app/services/course-service.service';
+import { CourseServiceService } from 'src/app/services/courseService/course-service.service';
 import { CursoReprovadoComponent } from './curso-reprovado/curso-reprovado.component';
 import { Observable, forkJoin, map } from 'rxjs';
 

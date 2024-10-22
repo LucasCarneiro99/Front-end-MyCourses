@@ -3,6 +3,30 @@
   height: 100%;
 }
 
+/* Para telas com largura máxima de 414px */
+@media (max-width: 414px) {
+  .cardaTelasMenores {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+    width: auto; /* Garantir que o card se ajuste à tela */
+    max-width: 100%; /* Impedir que o card seja maior que a tela */
+    box-sizing: border-box; /* Inclui padding e borda dentro da largura */
+  }
+
+  .table-responsive {
+    overflow-x: auto; /* Permite scroll horizontal na tabela */
+    width: 100%; /* Faz a div responsiva ocupar 100% da largura do card */
+  }
+
+  .table {
+    width: 100%; /* Faz a tabela ocupar 100% da largura do contêiner */
+    min-width: 600px; /* Define uma largura mínima se necessário para evitar que a tabela fique muito pequena */
+  }
+}
+
+
+
 :host {
   display: block;
   height: 100%;

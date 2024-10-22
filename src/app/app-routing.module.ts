@@ -6,15 +6,43 @@ import { PaginaDeReproducaoDeVideosComponent } from './pages/pagina-de-reproduca
 import { MinhasSubmissoesComponent } from './pages/minhas-submissoes/minhas-submissoes.component';
 import { AvaliarSubmissoesComponent } from './pages/avaliar-submissoes/avaliar-submissoes.component';
 import { SubmissoesProfessorComponent } from './pages/submissoes-professor/submissoes-professor.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'home', component: PaginaInicialComponent },
-  { path: 'video', component: PaginaDeReproducaoDeVideosComponent },
-  { path: 'minhas-submissoes', component: MinhasSubmissoesComponent },
-  { path: 'avaliar-submissoes', component: AvaliarSubmissoesComponent },
-  { path: 'submissoes', component: SubmissoesProfessorComponent },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    canActivate:[AuthGuard],
+    path: 'home',
+    component: PaginaInicialComponent
+  },
+  {
+    canActivate:[AuthGuard],
+    path: 'video',
+    component: PaginaDeReproducaoDeVideosComponent
+  },
+  {
+    canActivate:[AuthGuard],
+    path: 'minhas-submissoes',
+    component: MinhasSubmissoesComponent
+  },
+  {
+    canActivate:[AuthGuard],
+    path: 'avaliar-submissoes',
+    component: AvaliarSubmissoesComponent
+  },
+  {
+    canActivate:[AuthGuard],
+    path: 'submissoes',
+    component: SubmissoesProfessorComponent
+  },
 ];
 
 @NgModule({
