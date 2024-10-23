@@ -33,3 +33,11 @@
 .spacer {
   height: 50px;
 }
+
+@media (max-width: 414px) {
+  .cardaTelasMenores {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+}
